@@ -103,8 +103,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/strInstructions"
-            app:atg_backgroundColor="#EC3D6C"
-            app:atg_borderColor="#EC3D6C"
+            app:atg_backgroundColor="#f3973e"
+            app:atg_borderColor="#f3973e"
             app:atg_textColor="#FFFFFF"
             style="@style/TagGroup" />
 
