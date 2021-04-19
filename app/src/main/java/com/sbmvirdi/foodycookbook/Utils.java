@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Utils {
 
 
-    public String getYouTubeId (String youTubeUrl) {
+    public static String getYouTubeId (String youTubeUrl) {
         String pattern = "(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*";
         Pattern compiledPattern = Pattern.compile(pattern);
         Matcher matcher = compiledPattern.matcher(youTubeUrl);

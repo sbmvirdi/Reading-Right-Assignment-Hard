@@ -1,674 +1,685 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mealRow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp"
-    android:id="@+id/mealRow"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:scaleType="centerCrop"
-            android:id="@+id/strMealThumb"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name of Meal"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:paddingStart="10dp"
-            app:layout_constraintTop_toBottomOf="@id/strMealThumb"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:id="@+id/strMeal"
-            android:paddingLeft="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strMeal"
-            android:text="Category:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strCategoryLabel"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strCategoryLabel"
-            app:layout_constraintTop_toBottomOf="@id/strMeal"
-            android:text="Category:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strCategory"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strCategory"
-            android:text="Area:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strAreaLabel"
-            android:paddingStart="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strAreaLabel"
-            app:layout_constraintTop_toBottomOf="@id/strCategory"
-            android:text="Area:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strArea"
-            android:paddingStart="10dp" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Instructions"
-            android:textSize="25sp"
-            android:id="@+id/instructionLabel"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/strAreaLabel"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"/>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/instructionLabel"
-            android:text="This is instructions"
-            android:paddingLeft="10dp"
-            android:textSize="16sp"
-            android:id="@+id/strInstructions"/>
-
-        <me.gujun.android.taggroup.TagGroup
-            android:id="@+id/strTags"
-            android:layout_marginTop="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strInstructions"
-            app:atg_backgroundColor="#f3973e"
-            app:atg_borderColor="#f3973e"
-            app:atg_textColor="#FFFFFF"
-            style="@style/TagGroup" />
+    android:paddingBottom="20dp">
 
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ingredients"
-            android:textSize="25sp"
-            android:id="@+id/ingredientsLabel"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/strTags"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"/>
+    <ImageView
+        android:id="@+id/strMealThumb"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsLabel"
-            android:text="Ingredient 1:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:layout_marginTop="5dp"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient1"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/play"
+        android:visibility="gone"
+        android:id="@+id/playYoutube"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient1"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsLabel"
-            android:text="Measure 1"
-            android:layout_marginTop="5dp"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure1"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <TextView
+        android:id="@+id/strMeal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Name of Meal"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strMealThumb" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient1"
-            android:text="Ingredient 2:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient2"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <TextView
+        android:id="@+id/strCategoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Category:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strMeal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient2"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient1"
-            android:text="Measure 2"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure2"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <TextView
+        android:id="@+id/strCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Category:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/strCategoryLabel"
+        app:layout_constraintTop_toBottomOf="@id/strMeal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient2"
-            android:text="Ingredient 3:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:visibility="gone"
-            android:id="@+id/strIngredient3"
-            android:paddingStart="10dp" />
+    <TextView
+        android:id="@+id/strAreaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Area:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strCategory" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient3"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient2"
-            android:text="Measure 3"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure3"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <TextView
+        android:id="@+id/strArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Area:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/strAreaLabel"
+        app:layout_constraintTop_toBottomOf="@id/strCategory" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient3"
-            android:text="Ingredient 4:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient4"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient4"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient3"
-            android:text="Measure 4"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure4"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient4"
-            android:text="Ingredient 5:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient5"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient5"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient4"
-            android:text="Measure 5"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure5"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient5"
-            android:text="Ingredient 6:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient6"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient6"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient5"
-            android:text="Measure 6"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure6"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient6"
-            android:text="Ingredient 7:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient7"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient7"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient6"
-            android:text="Measure 7"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure7"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient7"
-            android:text="Ingredient 8:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient8"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient8"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient7"
-            android:text="Measure 8"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure8"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient8"
-            android:text="Ingredient 9:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient9"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient9"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient8"
-            android:text="Measure 8"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure9"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient9"
-            android:text="Ingredient 10:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient10"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient10"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient9"
-            android:text="Measure 10"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure10"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient10"
-            android:text="Ingredient 11:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient11"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient11"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient10"
-            android:text="Measure 11"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure11"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient11"
-            android:text="Ingredient 12:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient12"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient12"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient11"
-            android:text="Measure 12"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure12"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient12"
-            android:text="Ingredient 13:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient13"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient13"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient12"
-            android:text="Measure 13"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure13"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient13"
-            android:text="Ingredient 14:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient14"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient14"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient13"
-            android:text="Measure 14"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure14"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient14"
-            android:text="Ingredient 15:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient15"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient15"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient14"
-            android:text="Measure 15"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure15"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient15"
-            android:text="Ingredient 16:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient16"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient16"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient15"
-            android:text="Measure 16"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure16"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient16"
-            android:text="Ingredient 17:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient17"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient17"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient16"
-            android:text="Measure 17"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure17"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient17"
-            android:text="Ingredient 18:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient18"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient18"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient17"
-            android:text="Measure 18"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure18"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient18"
-            android:text="Ingredient 19:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient19"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient19"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient18"
-            android:text="Measure 19"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure19"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient19"
-            android:text="Ingredient 20:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strIngredient20"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strIngredient20"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient19"
-            android:text="Measure 20"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strMeasure20"
-            android:paddingStart="10dp"
-            android:visibility="gone"/>
+    <TextView
+        android:id="@+id/instructionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="Instructions"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/strAreaLabel" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient20"
-            android:text="Source:"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:id="@+id/strSource"
-            android:paddingStart="10dp" />
+    <TextView
+        android:id="@+id/strInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="This is instructions"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/instructionLabel" />
+
+    <me.gujun.android.taggroup.TagGroup
+        android:id="@+id/strTags"
+        style="@style/TagGroup"
+        android:layout_marginTop="10dp"
+        app:atg_backgroundColor="#f3973e"
+        app:atg_borderColor="#f3973e"
+        app:atg_textColor="#FFFFFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strInstructions" />
 
 
-        <com.stephenvinouze.linkifiedtextview.LinkTextView
-            android:id="@+id/postLink"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/strSource"
-            app:layout_constraintTop_toBottomOf="@id/strIngredient20"
-            app:tvLinkText="https://google.com"
-            app:tvLinkTextColor="#CC8DC8"
-            android:textSize="18sp"
-            app:tvLinkType="web" />
+    <TextView
+        android:id="@+id/ingredientsLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredients"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/strTags" />
+
+    <TextView
+        android:id="@+id/strIngredient1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 1:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ingredientsLabel" />
+
+    <TextView
+        android:id="@+id/strMeasure1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 1"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient1"
+        app:layout_constraintTop_toBottomOf="@id/ingredientsLabel" />
+
+    <TextView
+        android:id="@+id/strIngredient2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 2:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient1" />
+
+    <TextView
+        android:id="@+id/strMeasure2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 2"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient2"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient1" />
+
+    <TextView
+        android:id="@+id/strIngredient3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 3:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient2" />
+
+    <TextView
+        android:id="@+id/strMeasure3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 3"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient3"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient2" />
+
+
+    <TextView
+        android:id="@+id/strIngredient4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 4:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient3" />
+
+    <TextView
+        android:id="@+id/strMeasure4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 4"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient4"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient3" />
+
+    <TextView
+        android:id="@+id/strIngredient5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 5:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient4" />
+
+    <TextView
+        android:id="@+id/strMeasure5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 5"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient5"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient4" />
+
+    <TextView
+        android:id="@+id/strIngredient6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 6:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient5" />
+
+    <TextView
+        android:id="@+id/strMeasure6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 6"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient6"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient5" />
+
+    <TextView
+        android:id="@+id/strIngredient7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 7:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient6" />
+
+    <TextView
+        android:id="@+id/strMeasure7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 7"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient7"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient6" />
+
+    <TextView
+        android:id="@+id/strIngredient8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 8:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient7" />
+
+    <TextView
+        android:id="@+id/strMeasure8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 8"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient8"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient7" />
+
+    <TextView
+        android:id="@+id/strIngredient9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 9:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient8" />
+
+    <TextView
+        android:id="@+id/strMeasure9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 8"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient9"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient8" />
+
+    <TextView
+        android:id="@+id/strIngredient10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 10:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient9" />
+
+    <TextView
+        android:id="@+id/strMeasure10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 10"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient10"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient9" />
+
+    <TextView
+        android:id="@+id/strIngredient11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 11:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient10" />
+
+    <TextView
+        android:id="@+id/strMeasure11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 11"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient11"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient10" />
+
+    <TextView
+        android:id="@+id/strIngredient12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 12:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient11" />
+
+    <TextView
+        android:id="@+id/strMeasure12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 12"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient12"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient11" />
+
+    <TextView
+        android:id="@+id/strIngredient13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 13:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient12" />
+
+    <TextView
+        android:id="@+id/strMeasure13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 13"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient13"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient12" />
+
+    <TextView
+        android:id="@+id/strIngredient14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 14:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient13" />
+
+    <TextView
+        android:id="@+id/strMeasure14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 14"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient14"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient13" />
+
+    <TextView
+        android:id="@+id/strIngredient15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 15:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient14" />
+
+    <TextView
+        android:id="@+id/strMeasure15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 15"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient15"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient14" />
+
+    <TextView
+        android:id="@+id/strIngredient16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 16:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient15" />
+
+    <TextView
+        android:id="@+id/strMeasure16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 16"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient16"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient15" />
+
+    <TextView
+        android:id="@+id/strIngredient17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 17:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient16" />
+
+    <TextView
+        android:id="@+id/strMeasure17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 17"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient17"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient16" />
+
+    <TextView
+        android:id="@+id/strIngredient18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 18:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient17" />
+
+    <TextView
+        android:id="@+id/strMeasure18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 18"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient18"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient17" />
+
+    <TextView
+        android:id="@+id/strIngredient19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 19:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient18" />
+
+    <TextView
+        android:id="@+id/strMeasure19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 19"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient19"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient18" />
+
+    <TextView
+        android:id="@+id/strIngredient20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Ingredient 20:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient19" />
+
+    <TextView
+        android:id="@+id/strMeasure20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Measure 20"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/strIngredient20"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient19" />
+
+
+    <TextView
+        android:id="@+id/strSourceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="Source:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient20" />
+
+
+    <com.stephenvinouze.linkifiedtextview.LinkTextView
+        android:id="@+id/strSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/strSourceLabel"
+        app:layout_constraintTop_toBottomOf="@id/strIngredient20"
+        app:tvLinkText="https://google.com"
+        app:tvLinkTextColor="@color/primaryDark"
+        app:tvLinkType="web" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
