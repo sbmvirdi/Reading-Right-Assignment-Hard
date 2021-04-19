@@ -21,6 +21,7 @@ import com.sbmvirdi.foodycookbook.R;
 import com.sbmvirdi.foodycookbook.Utils;
 import com.sbmvirdi.foodycookbook.databinding.FragmentHomeBinding;
 import com.sbmvirdi.foodycookbook.modelClasses.Meal;
+import com.sbmvirdi.foodycookbook.room.RoomDatabaseInstance;
 import com.sbmvirdi.foodycookbook.ui.activities.MainActivity;
 import com.sbmvirdi.foodycookbook.viewModels.HomeFragmentViewModel;
 import com.stephenvinouze.linkifiedtextview.LinkTextView;
@@ -67,6 +68,25 @@ public class HomeFragment extends Fragment {
 
     private void setMealData(Meal meal) {
 
+        if (RoomDatabaseInstance.getAppDatabase(getContext()).mealDao().getMealById(meal.getIdMeal())!=null){
+            bookmarkMeal();
+        }else{
+            removeBookmark();
+        }
+
+
+        homeBinding.bookmarkStatus.setOnClickListener(v->{
+            if (RoomDatabaseInstance.getAppDatabase(getContext()).mealDao().getMealById(meal.getIdMeal())!=null){
+                // already in database remove it
+                RoomDatabaseInstance.getAppDatabase(getContext()).mealDao().deleteMealById(meal.getIdMeal());
+                // remove bookmark after it is deleted
+                removeBookmark();
+            }else{
+                // it is not bookmarked
+                RoomDatabaseInstance.getAppDatabase(getContext()).mealDao().insertMeal(meal);
+                bookmarkMeal();
+            }
+        });
 
         Glide.with(homeBinding.getRoot()).load(meal.getStrMealThumb()).into(homeBinding.meal.strMealThumb);
         homeBinding.meal.strMeal.setText(meal.getStrMeal());
@@ -287,6 +307,13 @@ public class HomeFragment extends Fragment {
             }
         }
 
+    }
 
+    private void removeBookmark(){
+        Glide.with(homeBinding.getRoot()).load(R.drawable.ic_bookmark).into(homeBinding.bookmarkStatus);
+    }
+
+    private void bookmarkMeal(){
+        Glide.with(homeBinding.getRoot()).load(R.drawable.ic_bookmarked).into(homeBinding.bookmarkStatus);
     }
 }
