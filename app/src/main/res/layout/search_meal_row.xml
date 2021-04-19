@@ -14,6 +14,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:scaleType="centerCrop"
             android:id="@+id/strMealThumb"
             />
 
@@ -28,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:text="Meal Name"
+                android:id="@+id/strMealName"
                 android:textColor="@color/black"
                 />
 

@@ -23,4 +23,10 @@ public interface MealDao {
     @Query("SELECT * FROM Meal")
     LiveData<List<Meal>> getMealList();
 
+    @Query("Select * from Meal where idMeal=:idMeal limit 1")
+    Meal getMealById(String idMeal);
+
+    @Query("delete from Meal where idMeal=:idMeal")
+    void deleteMealById(String idMeal);
+
 }

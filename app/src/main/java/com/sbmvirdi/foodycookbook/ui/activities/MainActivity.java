@@ -55,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
             if (controller != null) {
                 controller.navigate(R.id.action_homeFragment_to_searchFragment2);
             }
+        }else if (item.getItemId() == R.id.bookmarks){
+            if (controller != null) {
+                controller.navigate(R.id.action_homeFragment_to_favouriteFragment);
+            }
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -70,12 +75,14 @@ public class MainActivity extends AppCompatActivity {
     public static void hideSearch(){
         if (menu!=null) {
             menu.findItem(R.id.search).setVisible(false);
+            menu.findItem(R.id.bookmarks).setVisible(false);
         }
     }
 
     public static void showSearch(){
         if (menu!=null) {
             menu.findItem(R.id.search).setVisible(true);
+            menu.findItem(R.id.bookmarks).setVisible(true);
         }
 
     }

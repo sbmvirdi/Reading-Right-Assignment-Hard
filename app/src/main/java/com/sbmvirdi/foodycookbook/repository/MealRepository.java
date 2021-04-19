@@ -1,11 +1,17 @@
 package com.sbmvirdi.foodycookbook.repository;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+
 import com.sbmvirdi.foodycookbook.interfaces.LoadData;
 import com.sbmvirdi.foodycookbook.modelClasses.Meal;
 import com.sbmvirdi.foodycookbook.modelClasses.MealData;
 import com.sbmvirdi.foodycookbook.network.MealAPI;
 import com.sbmvirdi.foodycookbook.network.RetrofitInstance;
+import com.sbmvirdi.foodycookbook.room.RoomDatabaseInstance;
+
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
@@ -86,5 +92,12 @@ public class MealRepository {
                 loadData.onDataLoaded(new ArrayList<>());
             }
         });
+    }
+
+    /**
+     * function to get all meals from room database
+     */
+    public void loadMealsFromRoom(Context context,LoadData<LiveData<List<Meal>>> loadData){
+        loadData.onDataLoaded(RoomDatabaseInstance.getAppDatabase(context).mealDao().getMealList());
     }
 }

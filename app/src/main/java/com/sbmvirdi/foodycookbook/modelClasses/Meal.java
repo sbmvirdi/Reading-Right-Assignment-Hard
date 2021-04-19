@@ -5,10 +5,12 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import com.google.gson.annotations.SerializedName;
 
-@Entity
-public class Meal {
+import java.io.Serializable;
 
-    @PrimaryKey
+@Entity
+public class Meal implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
 

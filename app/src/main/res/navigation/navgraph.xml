@@ -36,6 +36,13 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_searchFragment2_to_detailedMealFragment"
+            app:destination="@id/detailedMealFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
@@ -49,5 +56,17 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_favouriteFragment_to_detailedMealFragment"
+            app:destination="@id/detailedMealFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
     </fragment>
+    <fragment
+        android:id="@+id/detailedMealFragment"
+        android:name="com.sbmvirdi.foodycookbook.ui.fragments.DetailedMealFragment"
+        android:label="Details of Meal"
+        tools:layout="@layout/fragment_detailed_meal" />
 </navigation>
