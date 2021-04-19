@@ -47,11 +47,18 @@ public class FavouriteFragment extends Fragment {
     }
 
     private void loadData(List<Meal> meals) {
-        fragmentFavouriteBinding.favouriteRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        fragmentFavouriteBinding.favouriteRecycler.setAdapter(new SearchMealAdapter(meals,getContext(),meal->{
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("meal",meal);
-            Navigation.findNavController(requireView()).navigate(R.id.action_favouriteFragment_to_detailedMealFragment,bundle);
-        }));
+        if (meals.size()>0) {
+            fragmentFavouriteBinding.favouriteRecycler.setVisibility(View.VISIBLE);
+            fragmentFavouriteBinding.empty.setVisibility(View.GONE);
+            fragmentFavouriteBinding.favouriteRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+            fragmentFavouriteBinding.favouriteRecycler.setAdapter(new SearchMealAdapter(meals, getContext(), meal -> {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("meal", meal);
+                Navigation.findNavController(requireView()).navigate(R.id.action_favouriteFragment_to_detailedMealFragment, bundle);
+            }));
+        }else{
+            fragmentFavouriteBinding.empty.setVisibility(View.VISIBLE);
+            fragmentFavouriteBinding.favouriteRecycler.setVisibility(View.GONE);
+        }
     }
 }

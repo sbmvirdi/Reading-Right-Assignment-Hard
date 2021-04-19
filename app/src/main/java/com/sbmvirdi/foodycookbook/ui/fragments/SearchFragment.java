@@ -50,6 +50,7 @@ public class SearchFragment extends Fragment {
 
         fragmentSearchBinding.searchButton.setOnClickListener(v->{
             if (!fragmentSearchBinding.searchBar.getText().toString().isEmpty()){
+                fragmentSearchBinding.noSearch.setVisibility(View.GONE);
                 viewModel.getSearchResult(fragmentSearchBinding.searchBar.getText().toString());
             }
         });
@@ -68,6 +69,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void initData(List<Meal> meals) {
+        fragmentSearchBinding.searchRecycler.setVisibility(View.VISIBLE);
         fragmentSearchBinding.searchRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         fragmentSearchBinding.searchRecycler.setAdapter(new SearchMealAdapter(meals,getContext(),meal->{
             Bundle bundle = new Bundle();

@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.sbmvirdi.foodycookbook.ui.fragments.HomeFragment"
-        android:label="Random Meal"
+        android:label="A Meal To Try"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_searchFragment2"
